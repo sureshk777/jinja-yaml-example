@@ -1,0 +1,12 @@
+---
+# Inventory File
+fabric:
+  children:
+    spines:
+      hosts:
+        spine1:
+        spine2:
+    leafs:
+      hosts:
+        leaf1:
+        leaf2:
