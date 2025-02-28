@@ -1,0 +1,21 @@
+name: Sync AVD Server
+
+on:
+  push:
+    branches:
+      - main  # Runs whenever code is pushed to main
+  workflow_dispatch:  # Allows manual triggering from GitHub Actions UI
+
+jobs:
+  sync_avd:
+    runs-on: self-hosted  # Use the self-hosted runner inside your lab
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Pull Latest Changes on AVD Server
+        run: |
+          cd /home/arista/sureshk/jinja-yaml-example  # Adjust to your repo path on the AVD server
+          git pull origin main
+
